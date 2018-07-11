@@ -58,12 +58,14 @@ public class RequirementsControllers {
 
     @RequestMapping("/searchCity")
     String searchByCity(@RequestParam(value = "city", required = false, defaultValue = "0") Integer city, Model model){
+        model.addAttribute("categories",categoryService.listAllCategories());
         model.addAttribute("requirements",requirementsService.getRequirementsByCity(city));
         return  "viewRequirements";
     }
     @RequestMapping("/searchDescription")
     String showRequirement(@RequestParam(value = "description", required = false, defaultValue = "") String description, Model model){
         model.addAttribute("requirements",requirementsService.getRequirementsByDescription(description));
+        model.addAttribute("categories",categoryService.listAllCategories());
         return  "viewRequirements";
     }
     @RequestMapping("/showRequirement/{id}")

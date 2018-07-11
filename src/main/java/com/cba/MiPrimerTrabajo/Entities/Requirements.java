@@ -8,7 +8,7 @@ public class Requirements {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String name;
+    private String name="";
     @ManyToOne
     @JoinColumn(name = "city_id")
     private City city;
@@ -21,7 +21,13 @@ public class Requirements {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    private String description;
+    private String description="";
+
+    private String experience="";
+    private String academicLevel="";
+    private String languages="";
+
+
     public Integer getId() {
         return id;
     }
@@ -68,5 +74,30 @@ public class Requirements {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getAcademicLevel() {
+        return academicLevel;
+    }
+
+    public void setAcademicLevel(String academicLevel) {
+        this.academicLevel = academicLevel;
+    }
+
+
+    public String getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String languages) {
+        this.languages = languages;
     }
 }
