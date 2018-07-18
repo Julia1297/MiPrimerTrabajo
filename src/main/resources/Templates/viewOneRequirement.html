@@ -3,8 +3,11 @@
 <head>
     <title>MiPrimerTrabajo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    -->
+    <style>div{background:"Silver"}</style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -29,8 +32,9 @@
     </div>
 </nav>
 
-<div id="requirement">
-    <h2 th:text="${requirement.name}"></h2>
+<div  style="background-color:powderblue;" id="requirement">
+
+    <center><h4 th:text="${requirement.name}"></h4></center>
     <p>Ciudad: <span th:text="${requirement.city.name}"></span></p>
     <p>Empresa: <span th:text="${requirement.company.name}"></span></p>
     <p>Descripción: <span th:text="${requirement.description}"></span></p>

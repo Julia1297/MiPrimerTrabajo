@@ -19,5 +19,8 @@ public interface RequirementsRepository extends CrudRepository<Requirements, Int
     @Query("SELECT r from Requirements r where r.category.id = :categoryid")
     Iterable<Requirements> getRequirementsByCategory(@Param("categoryid") Integer categoryid);
 
+    @Query("SELECT r from Requirements r where r.academicLevel LIKE %:academicLevel%")
+    Iterable<Requirements> getRequirementsByAcademicLevel(@Param("academicLevel") String academicLevel);
+
 
 }

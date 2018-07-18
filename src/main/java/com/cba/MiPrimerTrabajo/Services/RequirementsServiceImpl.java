@@ -52,4 +52,9 @@ public class RequirementsServiceImpl implements  RequirementsService{
     public Iterable<Requirements> getRequirementsByCategory(Integer categoryid) {
         return requirementsRepository.getRequirementsByCategory(categoryid);
     }
+
+    @Override
+    public Iterable<Requirements> getRequirementsByAcademicLevel(String academicLevel) {
+        return requirementsRepository.getRequirementsByAcademicLevel(academicLevel);
+    }
 }

@@ -62,12 +62,19 @@ public class RequirementsControllers {
         model.addAttribute("requirements",requirementsService.getRequirementsByCity(city));
         return  "viewRequirements";
     }
+    @RequestMapping("/searchAcademicLevel")
+    String searchByAcademicLevel(@RequestParam(value = "academicLevel", required = false, defaultValue = "") String academicLevel, Model model){
+        model.addAttribute("categories",categoryService.listAllCategories());
+        model.addAttribute("requirements",requirementsService.getRequirementsByAcademicLevel(academicLevel));
+        return  "viewRequirements";
+    }
     @RequestMapping("/searchDescription")
     String showRequirement(@RequestParam(value = "description", required = false, defaultValue = "") String description, Model model){
         model.addAttribute("requirements",requirementsService.getRequirementsByDescription(description));
         model.addAttribute("categories",categoryService.listAllCategories());
         return  "viewRequirements";
     }
+
     @RequestMapping("/showRequirement/{id}")
     String searchByDescription(@PathVariable Integer id, Model model){
         model.addAttribute("categories",categoryService.listAllCategories());
