@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body>
+<h3 th:text="${category.name}"></h3>
 <header>
     <nav class="navbar navbar-default">
         <div style="color:blue;" class="container-fluid">
@@ -35,7 +36,7 @@
                 <header>
                     <h3 th:text="${requirement.name}"></h3>
                 </header>
-                <p th:text="${requirement.academic}"></p>
+                <p th:text="${requirement.description}"></p>
                 <footer>
                     <a  class="button" th:href="${'/showRequirement/' + requirement.id}">Ver</a>
                 </footer>
@@ -45,4 +46,3 @@
 </section>
 </body>
 </html>
-

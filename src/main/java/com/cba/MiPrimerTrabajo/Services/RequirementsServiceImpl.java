@@ -54,7 +54,17 @@ public class RequirementsServiceImpl implements  RequirementsService{
     }
 
     @Override
-    public Iterable<Requirements> getRequirementsByAcademicLevel(String academicLevel) {
-        return requirementsRepository.getRequirementsByAcademicLevel(academicLevel);
+    public Iterable<Requirements> getRequirementsByAcademicLevel(String academic) {
+        return requirementsRepository.getRequirementsByAcademicLevel(academic);
+    }
+
+    @Override
+    public Iterable<Requirements> getRequirementsByDetails(String languages, String academic, String experience) {
+        return requirementsRepository.getRequirementsByDetails(languages,academic,experience);
+    }
+
+    @Override
+    public Iterable<Requirements> getRequirementsByExperience(String experience) {
+        return requirementsRepository.getRequirementsByExperience(experience);
     }
 }

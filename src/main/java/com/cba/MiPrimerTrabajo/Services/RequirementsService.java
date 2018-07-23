@@ -16,7 +16,10 @@ public interface RequirementsService {
     Iterable<Requirements> getRequirementsByDescription(String description);
     Iterable<Requirements> getRequirementsByCity( Integer cityid);
     Iterable<Requirements> getRequirementsByCategory(Integer categoryid);
-    Iterable<Requirements> getRequirementsByAcademicLevel(String academicLevel);
+    Iterable<Requirements> getRequirementsByAcademicLevel(String academic);
+    Iterable<Requirements> getRequirementsByDetails(String languages,String academic,String experience);
+    Iterable<Requirements> getRequirementsByExperience(String experience);
+
 
 
 

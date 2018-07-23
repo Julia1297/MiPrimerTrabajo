@@ -24,7 +24,7 @@ public class Requirements {
     private String description="";
 
     private String experience="";
-    private String academicLevel="";
+    private String academic="";
     private String languages="";
 
 
@@ -84,13 +84,6 @@ public class Requirements {
         this.experience = experience;
     }
 
-    public String getAcademicLevel() {
-        return academicLevel;
-    }
-
-    public void setAcademicLevel(String academicLevel) {
-        this.academicLevel = academicLevel;
-    }
 
 
     public String getLanguages() {
@@ -99,5 +92,13 @@ public class Requirements {
 
     public void setLanguages(String languages) {
         this.languages = languages;
+    }
+
+    public String getAcademic() {
+        return academic;
+    }
+
+    public void setAcademic(String academic) {
+        this.academic = academic;
     }
 }

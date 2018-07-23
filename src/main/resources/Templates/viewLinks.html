@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body>
+
 <header>
     <nav class="navbar navbar-default">
         <div style="color:blue;" class="container-fluid">
 
-            <form action="/searchCategory" method="get">
+            <form action="/searchLinksByCategory" method="get">
                 <ul class="nav navbar-nav" th:each="category : ${categories}" >
                     <li class="active"  >
                         <button type="submit" id="category" name="category" th:value="${category.id}"
@@ -28,17 +29,18 @@
         </div>
     </nav>
 </header>
+<h3 th:if="${category!=0}" th:text="${category.name}"></h3>
+
 <section id="three" class="wrapper align-center">
     <div class="inner">
-        <div class="flex flex-2">
-            <article  th:each="requirement : ${requirements}" >
+        <div class="flex flex-1">
+            <article  th:each="link : ${links}" >
                 <header>
-                    <h3 th:text="${requirement.name}"></h3>
+                    <h3 th:text="${link.name}"></h3>
                 </header>
-                <p th:text="${requirement.academic}"></p>
-                <footer>
-                    <a  class="button" th:href="${'/showRequirement/' + requirement.id}">Ver</a>
-                </footer>
+                <p th:text="${link.description}"></p>
+                <p th:text="${link.category.name}"></p>
+
             </article>
         </div>
     </div>
