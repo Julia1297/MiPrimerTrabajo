@@ -565,3 +565,37 @@
 		color: #000;
 		background: red;
 	}
+
+/*********************************************************************************/
+/* Featured                                                                      */
+/*********************************************************************************/
+
+	.container ul li a:hover
+	{
+		background-color: #434343 /*sisiisis al pasar*/
+	}
+
+
+	.container ul li ul
+    {
+        display: none; /*sisis desaparecer*/
+        /*position: absolute;*/ /*uno encima del otro*/ /*noo*/
+        /*min-height: 140px;*/
+    }
+
+    .container ul li:hover ul /*sisis al pasar aparecer abajo*/
+    {
+        display: block;
+
+    }
+
+    .container ul li
+    {
+        position:relative;
+    }
+
+    .container ul li ul li /*para mover hacia un lado*/
+    {
+        right: -100px;
+        top:0px;
+    }
