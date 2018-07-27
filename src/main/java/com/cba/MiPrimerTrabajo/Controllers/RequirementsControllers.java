@@ -101,7 +101,7 @@ public class RequirementsControllers {
         List<Requirements> requirements = (List<Requirements>) requirementsService.getRequirementsByDetails(language,career,experience);
         model.addAttribute("categories",categoryService.listAllCategories());
         model.addAttribute("requirements",requirements);
-        return  "viewRequirements";
+        return  "viewSearchDetails";
     }
     @RequestMapping("/searchLinksByCategory")
     String searchLinksByCategory(@RequestParam(value = "category", required = false, defaultValue = "0") Integer category, Model model){
@@ -118,5 +118,23 @@ public class RequirementsControllers {
         }
         model.addAttribute("categories",categoryService.listAllCategories());
         return  "viewLinks";
+    }
+    @RequestMapping("/announcements")
+    String showAnnouncements(){
+
+
+        return  "viewAnnouncement";
+    }
+    @RequestMapping("/questions")
+    String questions(){
+
+
+        return  "viewQuestions";
+    }
+    @RequestMapping("/presentation")
+    String presentation(){
+
+
+        return  "viewPresentation";
     }
 }

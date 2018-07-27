@@ -27,17 +27,16 @@
                     </ul>
                 </li>
                 <li><a th:href="${'/searchByDetails'}">Yo cumplo los requisitos</a></li>
-                <li><a href="#">Links ayuda</a></li>
-                <li><a href="#">¿Quiénes somos?</a></li>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">¿Quiénes somos?</a></li>
-                <li><a href="#">Convocatorias</a></li>
+                <li><a th:href="${'/searchLinksByCategory'}">Links ayuda</a></li>
+                <li><a th:href="${'/presentation'}">¿Quiénes somos?</a></li>
+                <li><a th:href="${'/questions'}">Preguntas frecuentes</a></li>
+                <li><a th:href="${'/announcements'}">Convocatorias</a></li>
             </ul>
         </div>
     </div>
     <div id="main">
         <div id="logos">
-            <img src="../static/images/logo.jpg" th:src="@{/images/logo.jpg}" alt=""  style="width: 170px; heigth:170px;" />
+            <img src="../static/images/logo.jpeg" th:src="@{/images/logo.jpeg}" alt=""  style="width: 400px; heigth:400px;" />
         </div>
         <div id="search">
             <form class="navbar-form navbar-center" action="/searchAcademicLevel">

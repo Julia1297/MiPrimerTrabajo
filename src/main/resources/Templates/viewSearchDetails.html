@@ -30,23 +30,24 @@
 </header>
 
 <div id="search">
-    <form style="display:flex" action="/searchByDetails" method="get">
-        <select id="language" name="language" >
+    <form action="/searchByDetails" method="get">
+        <select class="form-control" style="width: 250px; color: #6cc091;" id="language" name="language" >
             <option value="Español">Español</option>
             <option value="Ingles">Ingles</option>
         </select>
-        <select id="experience" name="experience" >
+        <br/>
+        <select class="form-control" style="width: 250px; color: #6cc091;" id="experience" name="experience" >
             <option value="0">Ninguna</option>
             <option value="2">2 años</option>
             <option value="3">3 o mas años</option>
         </select>
-
-        <select id="career" name="career" >
+        <br/>
+        <select class="form-control" style="width: 250px; color: #6cc091;" id="career" name="career" >
             <option value="Ingenieria de Sistemas">Ingenieria de Sistemas</option>
             <option value="Derecho">Derecho</option>
             <option value="Medicina">Medicina</option>
         </select>
-
+        <br/>
         <input value = "Buscar" type="submit" class="btn btn-secondary" style="color:orange; background-color: rgba(1, 1, 36, 0.56);"/>
     </form>
 </div>
