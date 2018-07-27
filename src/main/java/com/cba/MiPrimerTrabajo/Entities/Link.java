@@ -15,6 +15,9 @@ public class Link {
     @NotNull
     private String description;
 
+    @NotNull
+    private String link;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -50,5 +53,13 @@ public class Link {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

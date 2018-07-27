@@ -33,12 +33,14 @@
 
 <section id="three" class="wrapper align-center">
     <div class="inner">
-        <div class="flex flex-1">
+        <div class="flex flex-1" style="border:thin">
             <article  th:each="link : ${links}" >
                 <header>
                     <h3 th:text="${link.name}"></h3>
                 </header>
                 <p th:text="${link.description}"></p>
+                <p th:text="${link.link}"></p>
+
                 <p th:text="${link.category.name}"></p>
 
             </article>

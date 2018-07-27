@@ -1,7 +1,11 @@
+delete from link;
 delete from requirements;
 delete from company;
 delete from city;
 delete from category;
+
+
+
 
 insert into city(id, name) values (1, 'Cochabamba');
 insert into city(id, name) values (2, 'Santa Cruz');
@@ -50,3 +54,7 @@ insert into requirements(id, category_id,city_id,company_id,description, experie
 values (14,1,1,4,'Operativizar los planes, programas, proyectos, campañas y actividades de prevención del delito','2 años en trabajos similares','Estudiante Universitario o de carrera de técnica en Ciencias Sociales o ramas afines','Castellano','Encargado de Funciones 4');
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name)
 values (15,1,1,4,'Proponer y ejecutar políticas, programas, proyectos, actividades y campañas en seguridad ciudadana','2 años','Licenciatura en Ciencias Económicas, Ciencias Jurídicas,  Políticas, Sociales, Policiales o ramas afines','Castellano','Jefe (a) de Departamento 2');
+
+
+insert into link(id,name,description,link,category_id) values (1, 'Codecademy','Un portal donde puedes aprender diversos lenguajes de programacion.','https://www.codecademy.com/es',2);
+insert into link(id,name,description,link,category_id) values (2, 'Fao','El aprendizaje en línea para satisfacer las necesidades de los profesionales de la agricultura y la seguridad alimentaria','http://www.fao.org',3);

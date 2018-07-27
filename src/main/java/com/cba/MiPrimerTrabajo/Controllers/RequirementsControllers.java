@@ -76,9 +76,9 @@ public class RequirementsControllers {
         return  "viewRequirements";
     }
     @RequestMapping("/searchAcademicLevel")
-    String searchByAcademicLevel(@RequestParam(value = "academicLevel", required = false, defaultValue = "") String academicLevel, Model model){
+    String searchByAcademicLevel(@RequestParam(value = "academic", required = false, defaultValue = "") String academic, Model model){
         model.addAttribute("categories",categoryService.listAllCategories());
-        model.addAttribute("requirements",requirementsService.getRequirementsByAcademicLevel(academicLevel));
+        model.addAttribute("requirements",requirementsService.getRequirementsByAcademicLevel(academic));
         return  "viewRequirements";
     }
     @RequestMapping("/searchDescription")
@@ -93,15 +93,21 @@ public class RequirementsControllers {
         model.addAttribute("requirement", requirementsService.getRequirements(id));
         return  "viewOneRequirement";
     }
-    @RequestMapping("/searchByDetails")
-    String searchByDetails(@RequestParam(value = "career", required = false, defaultValue = "") String career,
-                           @RequestParam(value = "experience", required = false, defaultValue = "Ninguna") String experience,
-                           @RequestParam(value = "language", required = false, defaultValue = "") String language,Model model){
+    @RequestMapping("/searchDetails")
+    String searchDetails(Model model){
         model.addAttribute("categories",categoryService.listAllCategories());
-        List<Requirements> requirements = (List<Requirements>) requirementsService.getRequirementsByDetails(language,career,experience);
+
+        return  "viewSearchDetails";
+    }
+    @RequestMapping("/searchByDetails")
+    String searchByDetails(@RequestParam(value = "academic", required = false, defaultValue = "") String academic,
+                           @RequestParam(value = "experience", required = false, defaultValue = "Ninguna") String experience,
+                           @RequestParam(value = "languages", required = false, defaultValue = "") String languages,Model model){
+        model.addAttribute("categories",categoryService.listAllCategories());
+        List<Requirements> requirements = (List<Requirements>) requirementsService.getRequirementsByDetails(languages,academic,experience);
         model.addAttribute("categories",categoryService.listAllCategories());
         model.addAttribute("requirements",requirements);
-        return  "viewSearchDetails";
+        return  "viewRequirements";
     }
     @RequestMapping("/searchLinksByCategory")
     String searchLinksByCategory(@RequestParam(value = "category", required = false, defaultValue = "0") Integer category, Model model){
