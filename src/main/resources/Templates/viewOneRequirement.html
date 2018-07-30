@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>MiPrimerTrabajo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>GUIA PREP - REQUISITOS ESPECIFICOS</title>
     <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     -->
-    <style>div{background:"Silver"}</style>
+    <!--<style>div{background:"Silver"}</style>-->
+    <link rel="stylesheet" href="../static/css/styleViewOneRequierement.css" th:href="@{/css/styleViewOneRequierement.css}"/>
 </head>
 <body>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Mi Primer Trabajo</a>
+            <h6>
+                <a class="navbar-brand" href="#">GUIA PREP</a>
+            </h6>
         </div>
         <form action="/searchCategory" method="get">
             <ul class="nav navbar-nav" th:each="category : ${categories}" >
@@ -32,15 +36,71 @@
     </div>
 </nav>
 
-<div  style="background-color:powderblue;" id="requirement">
+<div id="requirement"> <!-- <div  style="background-color:powderblue;" id="requirement">
+ -->
 
-    <center><h4 th:text="${requirement.name}"></h4></center>
-    <p>Ciudad: <span th:text="${requirement.city.name}"></span></p>
-    <p>Empresa: <span th:text="${requirement.company.name}"></span></p>
-    <p>Descripción: <span th:text="${requirement.description}"></span></p>
-    <p>Experiencia: <span th:text="${requirement.experience}"></span></p>
-    <p>Idioma: <span th:text="${requirement.languages}"></span></p>
+    <center>
 
+        <!--<h4 th:text="${requirement.name}"></h4>-->
+        <table width="800" cellspacing="1" cellpadding="3" border="0" bgcolor="#1E679A">
+            <tr>
+                <center>
+                    <td><font color="#FFFFFF" face="arial, verdana, helvetica">
+                        <b><h4 th:text="${requirement.name}"></h4></b>
+                    </font></td>
+                </center>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica">Ciudad:</font>
+                </td>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica"> <p><span th:text="${requirement.city.name}"></span></p></font>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica">Empresa:</font>
+                </td>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica"><p><span th:text="${requirement.company.name}"></span></p></font>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica">Descripción:</font>
+                </td>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica"><p><span th:text="${requirement.description}"></span></p></font>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica">Experiencia:</font>
+                </td>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica"><p><span th:text="${requirement.experience}"></span></p></font>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica">Idioma:</font>
+                </td>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica"><p><span th:text="${requirement.languages}"></span></p></font>
+                </td>
+            </tr>
+        </table>
+
+    </center>
+
+    <!--
+        <p>Ciudad: <span th:text="${requirement.city.name}"></span></p>
+        <p>Empresa: <span th:text="${requirement.company.name}"></span></p>
+        <p>Descripción: <span th:text="${requirement.description}"></span></p>
+        <p>Experiencia: <span th:text="${requirement.experience}"></span></p>
+        <p>Idioma: <span th:text="${requirement.languages}"></span></p>
+    -->
 </div>
 </body>
 </html>
