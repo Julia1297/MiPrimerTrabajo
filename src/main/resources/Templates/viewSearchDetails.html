@@ -1,18 +1,70 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<!--
+Template Name: Brickary
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-    <link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}"/>
-    <link rel="stylesheet" href="../static/css/font.css" th:href="@{/css/font.css}"/>
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Guia PREP</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/layout.css" th:href="@{/css/layout.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <script src="../static/scripts/jquery.min.js" th:src="@{/scripts/jquery.min.js}"></script>
+    <script src="../static/scripts/jquery.backtotop.js" th:src="@{/scripts/jquery.backtotop.js}"></script>
+    <script src="../static/scripts/jquery.mobilemenu.js" th:src="@{/scripts/jquery.mobilemenu.js}"></script>
+    <script src="../static/scripts/jquery.flexslider-min.js" th:src="@{/scripts/jquery.flexslider-min.js}"></script>
 </head>
-<body>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image: url(../static/images/01.png);" th:style="'background-image: url(' + @{/images/01.png} + ');'">
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div id="logo" class="fl_left">
+                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
+            </div>
+            <div class="fl_right">
+                <div class="navbar">
+                    <a  class="active" th:href="${'/'}">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Areas
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content"  >
+                            <div th:each="category : ${categories}">
+                                <a th:href="${'/searchByCategory/' + category.id}" th:text="${category.name}"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a th:href="${'/searchDetails'}">Yo cumplo</a>
+                    <a th:href="${'/searchLinksByCategory'}">Links</a>
+                    <a th:href="${'/announcements'}">Convocatorias</a>
+                </div>
+            </div>
+            <!-- ################################################################################################ -->
+        </header>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+</div>
+<!-- End Top Background Image Wrapper -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
 <header>
     <nav class="navbar navbar-default">
         <div style="color:blue;" class="container-fluid">
@@ -28,30 +80,131 @@
         </div>
     </nav>
 </header>
+<div class="wrapper row3">
+    <div class="hoc container clear">
+        <p class="btmspace-30">Encuentra los puestos de trabajo ideales para ti, en base a tus conocimientos, habilidades y experiencia.</p>
+        <p class="btmspace-30">Completa algunos datos relevantes.</p>
 
-<div id="search">
-    <form action="/searchByDetails" method="get">
-        <select class="form-control" style="width: 250px; color: #6cc091;" id="languages" name="languages" >
-            <option value="Español">Español</option>
-            <option value="Ingles">Ingles</option>
-        </select>
-        <br/>
-        <select class="form-control" style="width: 250px; color: #6cc091;" id="experience" name="experience" >
-            <option value="0">Ninguna</option>
-            <option value="2">2 años</option>
-            <option value="3">3 o mas años</option>
-        </select>
-        <br/>
-        <select class="form-control" style="width: 250px; color: #6cc091;" id="academic" name="academic" >
-            <option value="Ingenieria de Sistemas">Ingenieria de Sistemas</option>
-            <option value="Derecho">Derecho</option>
-            <option value="Medicina">Medicina</option>
-        </select>
-        <br/>
-        <input value = "Buscar" type="submit" class="btn btn-secondary" style="color:orange; background-color: rgba(1, 1, 36, 0.56);"/>
-    </form>
+        <!-- ################################################################################################ -->
+        <div class="group">
+            <form id="newsletter" method="post" action="#">
+
+                <section class="one_half first">
+                        <fieldset>
+                            <legend>Newsletter:</legend>
+                            <p>Idioma que hablas.</p>
+                            <input class="btmspace-15" id="languages" name="languages" type="text" value="" placeholder="Idioma"/>
+                            <p>Experiencia en años.</p>
+                            <input class="btmspace-15" id="experience" name="experience" type="text" value="" placeholder="Experiencia"/>
+                            <p>Idioma que hablas.</p>
+                            <input class="btmspace-15" id="knowledge" name="knowledge" type="text" value="" placeholder="Idioma"/>
+                            <div id="mainselection">
+                                <p>Seleccione la ciudad.</p>
+
+                                <select id="city" name="city" >
+                                    <option value="">Ninguna</option>
+                                    <option
+                                            th:each="city : ${cities}"
+                                            th:value="${city.id}"
+                                            th:text="${city.name}">
+                                    </option>
+
+                                </select>
+                                <br/>
+                                <p>Seleccione la compañia en la que tiene interes.</p>
+
+                                <select id="company" name="company" >
+                                    <option value="">Ninguna</option>
+                                    <option
+                                            th:each="company : ${companies}"
+                                            th:value="${company.id}"
+                                            th:text="${company.name}">
+                                    </option>
+
+                                </select>
+                            </div>
+
+                        </fieldset>
+                    <br/>
+                    <button type="submit" value="Buscar">Buscar</button>
+
+                </section>
+               <!-- <section class="one_half">
+                    <fieldset>
+
+                    </fieldset>
+
+                </section>
+-->
+            </form>
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
 </div>
 
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background: url(../static/images/02.png);" th:style="'background: url(' + @{/images/02.png} + ');'">
+
+    <section class="hoc container clear">
+        <!-- ################################################################################################ -->
+        <div class="sectiontitle center">
+            <h3 class="heading">Mejora tus habilidades</h3>
+            <p>Un buen profesional debe aprender diariamente sobre su área para poder rendir de mejor manera en la empresa</p>
+        </div>
+        <ul class="nospace group center">
+            <li class="one_third first">
+                <article><a  th:href="${'/searchLinks/2'}"><i class="btmspace-30 icon fa fa-desktop"></i></a>
+                    <h6 class="heading font-x1">Tecnologia</h6>
+                    <p>Aprende día a día nuevas tecnologías. Desarrolla tus habilidades cientificas, de programación y otros campos. [&hellip;]</p>
+                    <footer><a  th:href="${'/searchLinks/2'}">Leer más &raquo;</a></footer>
+                </article>
+            </li>
+            <li class="one_third">
+                <article><a th:href="${'/searchLinks/1'}"><i class="btmspace-30 icon fa fa-institution"></i></a>
+                    <h6 class="heading font-x1">Humanidades</h6>
+                    <p>Mantente actualizado con nuevos recursos diarios. [&hellip;]</p>
+                    <footer><a th:href="${'/searchLinks/1'}">Leer más &raquo;</a></footer>
+                </article>
+            </li>
+            <li class="one_third">
+                <article><a th:href="${'/searchLinks/4'}"><i class="btmspace-30 icon fa fa-money"></i></a>
+                    <h6 class="heading font-x1">Ciencias económicas</h6>
+                    <p>Mejorar tus habilidades en el área para ayudar al crecimiento de la empresa. [&hellip;]</p>
+                    <footer><a th:href="${'/searchLinks/4'}">Leer más &raquo;</a></footer>
+                </article>
+            </li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+    <footer id="footer" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <h3 class="heading">Guia PREP</h3>
+        <nav>
+            <ul class="nospace inline pushright uppercase">
+                <li><a th:href="${'/'}"><i class="fa fa-lg fa-home"></i></a></li>
+                <li><a th:href="${'/presentation'}">¿Quiénes somos?</a></li>
+                <li><a href="#">Contáctenos</a></li>
+                <li><a th:href="${'/questions'}">Preguntas frecuentes</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- ################################################################################################ -->
+    </footer>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 
 </body>
 </html>

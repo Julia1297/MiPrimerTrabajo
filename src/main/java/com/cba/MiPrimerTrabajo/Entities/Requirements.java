@@ -26,6 +26,7 @@ public class Requirements {
     private String experience="";
     private String academic="";
     private String languages="";
+    private String knowledge="";
 
 
     public Integer getId() {
@@ -100,5 +101,13 @@ public class Requirements {
 
     public void setAcademic(String academic) {
         this.academic = academic;
+    }
+
+    public String getKnowledge() {
+        return knowledge;
+    }
+
+    public void setKnowledge(String knowledge) {
+        this.knowledge = knowledge;
     }
 }

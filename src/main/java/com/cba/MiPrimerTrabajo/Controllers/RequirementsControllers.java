@@ -50,6 +50,9 @@ public class RequirementsControllers {
     @RequestMapping("/")
     String home(Model model){
         model.addAttribute("categories",categoryService.listAllCategories());
+        List <Requirements> requirements = (List<Requirements>) requirementsService.listAllRequirements();
+        model.addAttribute("requirement1",requirements.get(0));
+        model.addAttribute("requirements",requirements.subList(1,3));
         return  "home";
     }
 
@@ -96,7 +99,8 @@ public class RequirementsControllers {
     @RequestMapping("/searchDetails")
     String searchDetails(Model model){
         model.addAttribute("categories",categoryService.listAllCategories());
-
+        model.addAttribute("cities",cityService.listAllCities());
+        model.addAttribute("companies",companyService.listAllCompanies());
         return  "viewSearchDetails";
     }
     @RequestMapping("/searchByDetails")
@@ -111,6 +115,22 @@ public class RequirementsControllers {
     }
     @RequestMapping("/searchLinksByCategory")
     String searchLinksByCategory(@RequestParam(value = "category", required = false, defaultValue = "0") Integer category, Model model){
+
+        if(category==0) {
+            model.addAttribute("category",0);
+
+            model.addAttribute("links", linkService.listAllLinks());
+        }
+        else {
+            model.addAttribute("links", linkService.getLinksByCategory(category));
+            model.addAttribute("category",categoryService.getCategory(category));
+
+        }
+        model.addAttribute("categories",categoryService.listAllCategories());
+        return  "viewLinks";
+    }
+    @RequestMapping("/searchLinks/{category}")
+    String searchLinks(@PathVariable Integer category, Model model){
 
         if(category==0) {
             model.addAttribute("category",0);
