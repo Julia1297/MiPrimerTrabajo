@@ -7,11 +7,75 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    -->
-    <!--<style>div{background:"Silver"}</style>-->
+
+    <style>div{background:"Silver"}</style>
     <link rel="stylesheet" href="../static/css/styleViewOneRequierement.css" th:href="@{/css/styleViewOneRequierement.css}"/>
+-->
+    <meta charset="utf-8"/>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/layout.css" th:href="@{/css/layout.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <script src="../static/scripts/jquery.min.js" th:src="@{/scripts/jquery.min.js}"></script>
+    <script src="../static/scripts/jquery.backtotop.js" th:src="@{/scripts/jquery.backtotop.js}"></script>
+    <script src="../static/scripts/jquery.mobilemenu.js" th:src="@{/scripts/jquery.mobilemenu.js}"></script>
+    <script src="../static/scripts/jquery.flexslider-min.js" th:src="@{/scripts/jquery.flexslider-min.js}"></script>
 </head>
-<body>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image: url(../static/images/01.png);" th:style="'background-image: url(' + @{/images/01.png} + ');'">
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div id="logo" class="fl_left">
+                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
+            </div>
+            <div class="fl_right">
+                <div class="navbar">
+                    <a  class="active" th:href="${'/'}">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Areas
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content"  >
+                            <div th:each="category : ${categories}">
+                                <a th:href="${'/searchCategory/' + category.id}" th:text="${category.name}"></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a th:href="${'/searchDetails'}">Yo cumplo</a>
+                    <a th:href="${'/searchLinksByCategory'}">Links</a>
+                    <a th:href="${'/announcements'}">Convocatorias</a>
+                </div>
+            </div>
+            <!-- ################################################################################################ -->
+        </header>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <section id="breadcrumb" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Areas</a></li>
+
+        </ul>
+        <!-- ################################################################################################ -->
+        <h6 class="heading" th:text="${category.name}"></h6>
+        <!-- ################################################################################################ -->
+    </section>
+</div>
+<!--
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,7 +99,7 @@
         </form>
     </div>
 </nav>
-
+-->
 <div id="requirement"> <!-- <div  style="background-color:powderblue;" id="requirement">
  -->
 
@@ -102,5 +166,32 @@
         <p>Idioma: <span th:text="${requirement.languages}"></span></p>
     -->
 </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row3">
+        <footer id="footer" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <h3 class="heading">Guia PREP</h3>
+            <nav>
+                <ul class="nospace inline pushright uppercase">
+                    <li><a th:href="${'/'}"><i class="fa fa-lg fa-home"></i></a></li>
+                    <li><a th:href="${'/presentation'}">¿Quiénes somos?</a></li>
+                    <li><a href="#">Contáctenos</a></li>
+                    <li><a th:href="${'/questions'}">Preguntas frecuentes</a></li>
+
+                </ul>
+            </nav>
+
+            <!-- ################################################################################################ -->
+        </footer>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
 </body>
 </html>

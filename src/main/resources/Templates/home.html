@@ -40,6 +40,7 @@
                         <div class="dropdown-content"  >
                             <div th:each="category : ${categories}">
                                 <a th:href="${'/searchByCategory/' + category.id}" th:text="${category.name}"></a>
+
                             </div>
                         </div>
                     </div>
@@ -58,8 +59,6 @@
         <!-- ################################################################################################ -->
         <div >
                 <article>
-
-
                     <p style="text-align:center;">Encuentra tu puesto</p>
                     <footer>
                         <form class="navbar-form navbar-center" action="/searchAcademicLevel">
@@ -89,21 +88,23 @@
         <!-- ################################################################################################ -->
         <div id="introblocks">
             <ul class="nospace group">
+
                 <li class="one_third first">
                     <article>
                         <div>
                             <h6 class="heading" th:text="${requirement1.name}"></h6>
-                            <p th:text="${requirement1.description} + '[&hellip;]'"> </p>
+                            <p th:text="${requirement1.academic} + '[&hellip;]'"> </p>
                         </div>
                         <img src="../static/images/320x180.png" th:src="@{images/320x180.png}"  alt=""/>
                         <footer><a th:href="${'/showRequirement/' + requirement1.id}">Ver</a></footer>
                     </article>
                 </li>
+
                 <li class="one_third" th:each="requirement : ${requirements}">
                     <article>
                         <div>
                             <h6 class="heading" th:text="${requirement.name}"></h6>
-                            <p th:text="${requirement.description} + '[&hellip;]'"> </p>
+                            <p th:text="${requirement.academic} + '[&hellip;]'"> </p>
                         </div>
                         <img src="../static/images/320x180.png" th:src="@{images/320x180.png}"  alt=""/>
                         <footer><a th:href="${'/showRequirement/' + requirement.id}">Ver</a></footer>

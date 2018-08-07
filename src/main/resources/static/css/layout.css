@@ -63,13 +63,13 @@ File: Layout CSS
 .container{padding:80px 0;}
 
 /* Content */
-.container .content{}
+.container .content{}#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#6677BC; background-color:inherit;}
 
 .sectiontitle{display:block; margin-bottom:80px;}
 .sectiontitle *{margin:0;}
 
 #introblocks{position:relative; z-index:1;}
-#introblocks > ul{display:block; margin:-200px 0 80px;}
+#introblocks > ul{display:block; margin:0 0 80px;}/*margin -200*/
 #introblocks > ul > li{text-align:center;}
 #introblocks > ul > li > article{display:inline-block; width:100%; max-width:320px; text-align:left;}
 #introblocks > ul > li > article > div{padding:30px 20px;}
@@ -382,7 +382,7 @@ table a, #comments a{background-color:inherit;}
 
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
-	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
+	.one_half,.one_third,.two_third, .one_quarter, .two_quarter, .three_quarter{float: left;display:inline-block; float:none; width:180px; margin:0 0 30px 0; padding:0; height:auto;}/*float: left; display:inline-block; float:none; width:auto; margin:0 0 30px 0; padding:0;*/
 
 	#topbar{text-align:center;}
 	#topbar ul{margin:0 0 15px 0;}

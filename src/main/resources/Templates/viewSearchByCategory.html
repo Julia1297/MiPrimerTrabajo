@@ -1,48 +1,123 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <title></title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-    <link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}"/>
-    <link rel="stylesheet" href="../static/css/font.css" th:href="@{/css/font.css}"/>
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <meta charset="utf-8"/>
+    <!--<meta http-equiv='X-UA-Compatible' content='IE=edge'/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/layout.css" th:href="@{/css/layout.css}"/>
+    <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
+    <script src="../static/scripts/jquery.min.js" th:src="@{/scripts/jquery.min.js}"></script>
+    <script src="../static/scripts/jquery.backtotop.js" th:src="@{/scripts/jquery.backtotop.js}"></script>
+    <script src="../static/scripts/jquery.mobilemenu.js" th:src="@{/scripts/jquery.mobilemenu.js}"></script>
+    <script src="../static/scripts/jquery.flexslider-min.js" th:src="@{/scripts/jquery.flexslider-min.js}"></script>
+    <!--
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+
+<link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}"/>
+<link rel="stylesheet" href="../static/css/font.css" th:href="@{/css/font.css}"/>
+
+<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+-->
 </head>
-<body>
-<h3 th:text="${category.name}"></h3>
-<header>
-    <nav class="navbar navbar-default">
-        <div style="color:blue;" class="container-fluid">
-
-            <form action="/searchCategory" method="get">
-                <ul class="nav navbar-nav" th:each="category : ${categories}" >
-                    <li class="active"  >
-                        <button type="submit" id="category" name="category" th:value="${category.id}"
-                                th:text="${category.name}" class="btn btn-secondary"></button>
-                    </li>
-                </ul>
-            </form>
-        </div>
-    </nav>
-</header>
-<section id="three" class="wrapper align-center">
-    <div class="inner">
-        <div class="flex flex-2">
-            <article  th:each="requirement : ${requirements}" >
-                <header>
-                    <h3 th:text="${requirement.name}"></h3>
-                </header>
-                <p th:text="${requirement.description}"></p>
-                <footer>
-                    <a  class="button" th:href="${'/showRequirement/' + requirement.id}">Ver</a>
-                </footer>
-            </article>
-        </div>
+<body id="top">
+<div class="bgded overlay" style="background-image: url(../static/images/01.png);" th:style="'background-image: url(' + @{/images/01.png} + ');'">
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div id="logo" class="fl_left">
+                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
+            </div>
+            <div class="fl_right">
+                <div class="navbar">
+                    <a  class="active" th:href="${'/'}">Home</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Areas
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content"  >
+                            <div th:each="category : ${categories}">
+                                <a th:href="${'/searchByCategory/' + category.id}" th:text="${category.name}"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a th:href="${'/searchDetails'}">Yo cumplo</a>
+                    <a th:href="${'/searchLinksByCategory'}">Links</a>
+                    <a th:href="${'/announcements'}">Convocatorias</a>
+                </div>
+            </div>
+            <!-- ################################################################################################ -->
+        </header>
     </div>
-</section>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <section id="breadcrumb" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Areas</a></li>
+
+        </ul>
+        <!-- ################################################################################################ -->
+        <h6 class="heading" th:text="${category.name}"></h6>
+        <!-- ################################################################################################ -->
+    </section>
+</div>
+
+<div class="wrapper row3 coloured">
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <div id="introblocks">
+            <ul class="nospace group">
+                <li class="one_third" th:each="requirement : ${requirements}">
+                    <article >
+                        <div>
+                            <h6 class="heading" th:text="${requirement.name}"></h6>
+                            <p th:text="${requirement.academic} + '[&hellip;]'"> </p>
+                        </div>
+                        <img src="../static/images/320x180.png" th:src="@{images/320x180.png}"  alt=""/>
+                        <footer><a th:href="${'/showRequirement/' + requirement.id}">Ver</a></footer>
+                    </article>
+                </li>
+            </ul>
+        </div>
+        <p class="center"><a class="btn inverse" th:href="${'/searchCategory'}">VER MAS</a></p>
+        <!-- ################################################################################################ -->
+        <!-- / main body -->
+        <div class="clear"></div>
+    </main>
+</div>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+    <footer id="footer" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <h3 class="heading">Guia PREP</h3>
+        <nav>
+            <ul class="nospace inline pushright uppercase">
+                <li><a th:href="${'/'}"><i class="fa fa-lg fa-home"></i></a></li>
+                <li><a th:href="${'/presentation'}">¿Quiénes somos?</a></li>
+                <li><a href="#">Contáctenos</a></li>
+                <li><a th:href="${'/questions'}">Preguntas frecuentes</a></li>
+
+            </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+    </footer>
+</div>
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 </body>
 </html>
