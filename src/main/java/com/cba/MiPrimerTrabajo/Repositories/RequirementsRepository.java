@@ -25,6 +25,17 @@ public interface RequirementsRepository extends CrudRepository<Requirements, Int
     @Query("SELECT r from Requirements r where r.languages LIKE %:languages% and r.academic LIKE %:academic% and r.experience LIKE %:experience% and r.city.id=:city and r.company.id=:company and r.knowledge LIKE %:knowledge%")
     Iterable<Requirements> getRequirementsByDetails(@Param("languages") String languages, @Param("academic") String academic, @Param("experience") String experience, @Param("city") Integer city, @Param("company") Integer company, @Param("knowledge") String knowledge);
 
+    @Query("SELECT r from Requirements r where r.academic LIKE %:academic% and r.experience LIKE %:experience% and r.city.id=:city and r.company.id=:company and r.knowledge LIKE %:knowledge%")
+    Iterable<Requirements> getRequirementsByDetails1( @Param("academic") String academic, @Param("experience") String experience, @Param("city") Integer city, @Param("company") Integer company, @Param("knowledge") String knowledge);
+
+    @Query("SELECT r from Requirements r where  r.experience LIKE %:experience% and r.city.id=:city and r.company.id=:company and r.knowledge LIKE %:knowledge%")
+    Iterable<Requirements> getRequirementsByDetails2(  @Param("experience") String experience, @Param("city") Integer city, @Param("company") Integer company, @Param("knowledge") String knowledge);
+
+    @Query("SELECT r from Requirements r where r.city.id=:city and r.company.id=:company and r.knowledge LIKE %:knowledge%")
+    Iterable<Requirements> getRequirementsByDetails3( @Param("city") Integer city, @Param("company") Integer company, @Param("knowledge") String knowledge);
+
+    @Query("SELECT r from Requirements r where r.city.id=:city and r.company.id=:company")
+    Iterable<Requirements> getRequirementsByDetails4( @Param("city") Integer city, @Param("company") Integer company);
 
     @Query("SELECT r from Requirements r where r.experience LIKE %:experience%")
     Iterable<Requirements> getRequirementsByExperience(@Param("experience") String experience);

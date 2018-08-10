@@ -24,9 +24,9 @@ insert into company(id,name) values (4,'Alcaldia Municipal de Cochabamaba');
 insert into company(id,name) values (5,'Instituto Boliviano De Metrologia - IBMETRO');
 
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name,knowledge)
-values (1,2,1,3,'Desarrolladores de Java con pasion por la programacion y tecnologia','3 años o mas','Ingenieria de Sistemas  o Licenciatura en Informatica','Ingles intermedio','Desarrolladores',"Java");
+values (1,2,1,3,'Desarrolladores de Java con pasion por la programacion y tecnologia','3 años o mas','Ingenieria de Sistemas  o Licenciatura en Informatica','Ingles intermedio','Desarrolladores ','Java ');
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name)
-values (2,2,1,3,'Adoren la tecnologia','5 años o mas','Ingeniero Mecatronico','Ninguno','constructor mecanico');
+values (2,2,1,3,'Adoren la tecnologia','5 años o mas','Ingeniero Mecatronico','Ninguno ','constructor mecanico');
 
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name)
 values (3,4,1,2,'Administrar recursos','3 años','Licenciatura en administracion de empresas','Ninguno','Empleado 3');

@@ -105,12 +105,13 @@ public class RequirementsControllers {
         return  "viewSearchDetails";
     }
     @RequestMapping("/searchByDetails")
-    String searchByDetails(@RequestParam(value = "academic", required = false, defaultValue = "") String academic,
-                           @RequestParam(value = "experience", required = false, defaultValue = "") String experience,
-                           @RequestParam(value = "languages", required = false, defaultValue = "") String languages,
-                           @RequestParam(value = "knowledge", required = false, defaultValue = "") String knowledge,
+    String searchByDetails(@RequestParam(value = "academic", required = false, defaultValue = " ") String academic,
+                           @RequestParam(value = "experience", required = false, defaultValue = " ") String experience,
+                           @RequestParam(value = "languages", required = false, defaultValue = " ") String languages,
+                           @RequestParam(value = "knowledge", required = false, defaultValue = " ") String knowledge,
                            @RequestParam(value = "city", required = false, defaultValue = "1") Integer city,
                            @RequestParam(value = "company", required = false, defaultValue = "1") Integer company,Model model){
+
         List<Requirements> requirements = (List<Requirements>) requirementsService.getRequirementsByDetails(languages,academic,experience,city,company,knowledge);
         model.addAttribute("categories",categoryService.listAllCategories());
         model.addAttribute("requirements",requirements);
