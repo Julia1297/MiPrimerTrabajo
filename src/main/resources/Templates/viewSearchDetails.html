@@ -87,7 +87,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
         <!-- ################################################################################################ -->
         <div class="group">
-            <form id="newsletter" method="post" action="#">
+            <form id="newsletter" action="/searchByDetails" method="get">
 
                 <section class="one_half first">
                         <fieldset>
@@ -96,13 +96,15 @@ Licence URI: http://www.os-templates.com/template-terms
                             <input class="btmspace-15" id="languages" name="languages" type="text" value="" placeholder="Idioma"/>
                             <p>Experiencia en años.</p>
                             <input class="btmspace-15" id="experience" name="experience" type="text" value="" placeholder="Experiencia"/>
+                            <p>Conocimiento.</p>
+                            <input class="btmspace-15" id="knowledge" name="knowledge" type="text" value="" placeholder="Conocimiento"/>
                             <p>Idioma que hablas.</p>
-                            <input class="btmspace-15" id="knowledge" name="knowledge" type="text" value="" placeholder="Idioma"/>
+                            <input class="btmspace-15" id="academic" name="academic" type="text" value="" placeholder="Academic"/>
+
                             <div id="mainselection">
                                 <p>Seleccione la ciudad.</p>
 
                                 <select id="city" name="city" >
-                                    <option value="">Ninguna</option>
                                     <option
                                             th:each="city : ${cities}"
                                             th:value="${city.id}"
@@ -114,7 +116,6 @@ Licence URI: http://www.os-templates.com/template-terms
                                 <p>Seleccione la compañia en la que tiene interes.</p>
 
                                 <select id="company" name="company" >
-                                    <option value="">Ninguna</option>
                                     <option
                                             th:each="company : ${companies}"
                                             th:value="${company.id}"
