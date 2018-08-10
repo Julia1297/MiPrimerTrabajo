@@ -65,21 +65,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<header>
-    <nav class="navbar navbar-default">
-        <div style="color:blue;" class="container-fluid">
 
-            <form action="/searchCategory" method="get">
-                <ul class="nav navbar-nav" th:each="category : ${categories}" >
-                    <li class="active"  >
-                        <button type="submit" id="category" name="category" th:value="${category.id}"
-                                th:text="${category.name}" class="btn btn-secondary"></button>
-                    </li>
-                </ul>
-            </form>
-        </div>
-    </nav>
-</header>
 <div class="wrapper row3">
     <div class="hoc container clear">
         <p class="btmspace-30">Encuentra los puestos de trabajo ideales para ti, en base a tus conocimientos, habilidades y experiencia.</p>
@@ -98,7 +84,7 @@ Licence URI: http://www.os-templates.com/template-terms
                             <input class="btmspace-15" id="experience" name="experience" type="text" value="" placeholder="Experiencia"/>
                             <p>Conocimiento.</p>
                             <input class="btmspace-15" id="knowledge" name="knowledge" type="text" value="" placeholder="Conocimiento"/>
-                            <p>Idioma que hablas.</p>
+                            <p>Carrera</p>
                             <input class="btmspace-15" id="academic" name="academic" type="text" value="" placeholder="Academic"/>
 
                             <div id="mainselection">
