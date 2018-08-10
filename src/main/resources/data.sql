@@ -26,7 +26,7 @@ insert into company(id,name) values (5,'Instituto Boliviano De Metrologia - IBME
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name,knowledge)
 values (1,2,1,3,'Desarrolladores de Java con pasion por la programacion y tecnologia','3 años o mas','Ingenieria de Sistemas  o Licenciatura en Informatica','Ingles intermedio','Desarrolladores ','Java ');
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name)
-values (2,2,1,3,'Adoren la tecnologia','5 años o mas','Ingeniero Mecatronico','Ninguno ','constructor mecanico');
+values (2,2,1,3,'Adoren la tecnologia','5 años o mas','Ingeniero Mecatronico','Ninguno ','Constructor mecanico');
 
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name)
 values (3,4,1,2,'Administrar recursos','3 años','Licenciatura en administracion de empresas','Ninguno','Empleado 3');
@@ -59,6 +59,13 @@ values (15,1,1,4,'Proponer y ejecutar políticas, programas, proyectos, activida
 
 insert into link(id,name,description,link,category_id) values (1, 'Codecademy','Un portal donde puedes aprender diversos lenguajes de programacion.','https://www.codecademy.com/es',2);
 insert into link(id,name,description,link,category_id) values (2, 'Fao','El aprendizaje en línea para satisfacer las necesidades de los profesionales de la agricultura y la seguridad alimentaria','http://www.fao.org',3);
+insert into link(id,name,description,link,category_id) values (3, 'edX','Es una plataforma de cursos abiertos masivos en línea,','https://www.edx.org/es',1);
+insert into link(id,name,description,link,category_id) values (4, 'Datacamp','Es una web orientada al aprendizaje de dos lenguajes de programación orientados al análisis de datos','www.datacamp.com/',2);
+insert into link(id,name,description,link,category_id) values (5, 'Udemy','Es mejorar la vida de las personas mediante el aprendizaje. ','www.udemy.com',2);
+insert into link(id,name,description,link,category_id) values (6, 'Coursera','Desarrolla habilidades solicitadas.','https://www.coursera.org/',4);
+insert into link(id,name,description,link,category_id) values (7, 'Goodwall','Es una plataforma creada para ayudar a cada estudiante para que se conviertan en la mejor versión de sí mismos.','https://www.goodwall.org/',2);
+
+
 
 insert into requirements(id, category_id,city_id,company_id,description, experience, academic,languages,name)
 values (16,5,1,5,'Representar y dirigir el proceso de gestión, planificación, organización, integración, control y evaluación del proceso administrativo, operativo, financiero, técnico e institucional de los servicios que ofrece la Regional Cochabamba','3 años','Profesional con Título en Provisión Nacional en Ingeniería, Licenciatura en Física o ramas afines.','Inglés','JEFE REGIONAL COCHABAMBA');

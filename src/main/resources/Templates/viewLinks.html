@@ -46,8 +46,8 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content"  >
-                            <div th:each="category : ${categories}">
-                                <a th:href="${'/searchCategory/' + category.id}" th:text="${category.name}"></a>
+                            <div th:each="categoria : ${categories}">
+                                <a th:href="${'/searchByCategory/' + categoria.id}" th:text="${categoria.name}"></a>
 
                             </div>
                         </div>
@@ -66,77 +66,40 @@
 
 </div>
 
-<header>
-    <nav class="navbar navbar-default">
-        <div style="color:blue;" class="container-fluid">
 
-            <form action="/searchLinksByCategory" method="get">
-                <ul class="nav navbar-nav" th:each="category : ${categories}" >
-                    <li class="active"  >
-                        <button type="submit" id="category" name="category" th:value="${category.id}"
-                                th:text="${category.name}" class="btn btn-secondary"></button>
-                    </li>
+<div class="wrapper row3">
+    <main class="hoc container clear">
+        <!-- main body -->
+        <!-- ################################################################################################ -->
+        <div class="sidebar one_quarter first">
+            <!-- ################################################################################################ -->
+            <h6>AREAS</h6>
+            <nav class="sdb_holder">
+                <ul>
+                    <li><a th:href="${'/searchLinks/' + 2}"><i class="btmspace-30 icon fa fa-desktop"></i>Tecnología</a></li>
+                    <li><a  th:href="${'/searchLinks/' + 1}"><i class="btmspace-30 icon fa fa-institution"></i>Humanidades</a></li>
+                    <li><a  th:href="${'/searchLinks/' + 3}"><i class="btmspace-30 icon fa fa-heartbeat"></i>Salud</a></li>
+                    <li><a  th:href="${'/searchLinks/' + 4}"><i class="btmspace-30 icon fa fa-money"></i>Administrativas</a></li>
+                    <li><a  th:href="${'/searchLinks/' + 5}"><i class="btmspace-30 icon fa fa-flask"></i>Ciencias puras</a></li>
                 </ul>
-            </form>
+            </nav>
         </div>
-    </nav>
-</header>
-<h3 th:if="${category!=0}" th:text="${category.name}"></h3>
-
-<section id="three" class="wrapper align-center">
-    <div class="inner">
-        <div class="flex flex-1" style="border:thin">
-            <article  th:each="link : ${links}" >
-                <table width="800" cellspacing="1" cellpadding="3" border="0" bgcolor="#58D68D">
-                    <tr>
-
-                        <center>
-                            <td><font color="#FFFFFF" face="arial, verdana, helvetica">
-                                <b>
-                                    <header>
-                                        <h3 th:text="${link.name}"></h3>
-                                    </header>
-                                </b>
-                            </font></td>
-                        </center>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#ffffcc">
-                            <font face="arial, verdana, helvetica">Descripcion: </font>
-                        </td>
-                        <td bgcolor="#ffffcc">
-                            <font face="arial, verdana, helvetica"><p th:text="${link.description}"></p></font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#ffffcc">
-                            <font face="arial, verdana, helvetica">LInk:</font>
-                        </td>
-                        <td bgcolor="#ffffcc">
-                            <font face="arial, verdana, helvetica"><p th:text="${link.link}"></p></font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="#ffffcc">
-                            <font face="arial, verdana, helvetica">Categoria:</font>
-                        </td>
-                        <td bgcolor="#ffffcc">
-                            <font face="arial, verdana, helvetica"><p th:text="${link.category.name}"></p></font>
-                        </td>
-                    </tr>
-                </table>
-                <!--
-
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="content three_quarter">
+            <!-- ################################################################################################ -->
+            <h1>Links </h1>
+            <br/>
+            <div th:each="link : ${links}">
                 <p th:text="${link.description}"></p>
                 <p th:text="${link.link}"></p>
-
-                <p th:text="${link.category.name}"></p>
-                -->
-            </article>
+                <p th:if="${category!=0}" th:text="${link.category.name}"></p>
+                <hr size="20"  style="color: #6677BC;"/>
+            </div>
         </div>
-    </div>
-</section>
-<div class="wrapper row3">
+</main>
+</div>
+<div class="wrapper bgded overlay" style="background: url(../static/images/02.png);" th:style="'background: url(' + @{/images/02.png} + ');'">
     <footer id="footer" class="hoc clear">
         <!-- ################################################################################################ -->
         <h3 class="heading">Guia PREP</h3>

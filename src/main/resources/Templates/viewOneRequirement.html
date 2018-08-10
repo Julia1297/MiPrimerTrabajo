@@ -46,8 +46,8 @@
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-content"  >
-                            <div th:each="category : ${categories}">
-                                <a th:href="${'/searchCategory/' + category.id}" th:text="${category.name}"></a>
+                            <div th:each="categoria : ${categories}">
+                                <a th:href="${'/searchByCategory/' + categoria.id}" th:text="${categoria.name}"></a>
 
                             </div>
                         </div>

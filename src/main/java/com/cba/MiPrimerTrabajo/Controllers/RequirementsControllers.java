@@ -118,16 +118,14 @@ public class RequirementsControllers {
         return  "viewRequirements";
     }
     @RequestMapping("/searchLinksByCategory")
-    String searchLinksByCategory(@RequestParam(value = "category", required = false, defaultValue = "0") Integer category, Model model){
-
-        if(category==0) {
+    String searchLinksByCategory(@RequestParam(value = "categoryid", required = false, defaultValue = "0") Integer categoryid, Model model){
+        if(categoryid==0) {
             model.addAttribute("category",0);
-
             model.addAttribute("links", linkService.listAllLinks());
         }
         else {
-            model.addAttribute("links", linkService.getLinksByCategory(category));
-            model.addAttribute("category",categoryService.getCategory(category));
+            model.addAttribute("links", linkService.getLinksByCategory(categoryid));
+            model.addAttribute("category",categoryService.getCategory(categoryid));
 
         }
         model.addAttribute("categories",categoryService.listAllCategories());
