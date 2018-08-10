@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
 
-    <title></title>
+<head>
+    <title>Guia PREP</title>
     <meta charset="utf-8"/>
-    <!--<meta http-equiv='X-UA-Compatible' content='IE=edge'/>-->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="../static/css/layout.css" th:href="@{/css/layout.css}"/>
     <link rel="stylesheet" href="../static/css/navbar.css" th:href="@{/css/navbar.css}"/>
@@ -12,21 +12,8 @@
     <script src="../static/scripts/jquery.backtotop.js" th:src="@{/scripts/jquery.backtotop.js}"></script>
     <script src="../static/scripts/jquery.mobilemenu.js" th:src="@{/scripts/jquery.mobilemenu.js}"></script>
     <script src="../static/scripts/jquery.flexslider-min.js" th:src="@{/scripts/jquery.flexslider-min.js}"></script>
-    <!--
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-
-<link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}"/>
-<link rel="stylesheet" href="../static/css/font.css" th:href="@{/css/font.css}"/>
-
-<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
--->
 </head>
+
 <body id="top">
 <div class="bgded overlay" style="background-image: url(../static/images/01.png);" th:style="'background-image: url(' + @{/images/01.png} + ');'">
     <!-- ################################################################################################ -->
@@ -34,7 +21,7 @@
         <header id="header" class="hoc clear">
             <!-- ################################################################################################ -->
             <div id="logo" class="fl_left">
-                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
+                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{/images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
             </div>
             <div class="fl_right">
                 <div class="navbar">
@@ -57,6 +44,7 @@
             <!-- ################################################################################################ -->
         </header>
     </div>
+</div>
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
@@ -71,7 +59,7 @@
         <h6 class="heading" th:text="${category.name}"></h6>
         <!-- ################################################################################################ -->
     </section>
-</div>
+
 
 <div class="wrapper row3 coloured">
     <main class="hoc container clear">
@@ -85,7 +73,7 @@
                             <h6 class="heading" th:text="${requirement.name}"></h6>
                             <p th:text="${requirement.academic} + '[&hellip;]'"> </p>
                         </div>
-                        <img src="../static/images/320x180.png" th:src="@{images/320x180.png}"  alt=""/>
+                        <img src="../static/images/320x180.png" th:src="@{/images/320x180.png}"  alt=""/>
                         <footer><a th:href="${'/showRequirement/' + requirement.id}">Ver</a></footer>
                     </article>
                 </li>

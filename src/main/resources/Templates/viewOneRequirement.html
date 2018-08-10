@@ -36,7 +36,7 @@
         <header id="header" class="hoc clear">
             <!-- ################################################################################################ -->
             <div id="logo" class="fl_left">
-                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
+                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{/images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
             </div>
             <div class="fl_right">
                 <div class="navbar">
@@ -71,7 +71,7 @@
 
         </ul>
         <!-- ################################################################################################ -->
-        <h6 class="heading" th:text="${category.name}"></h6>
+        <!--<h6 class="heading" th:text="${category.name}"></h6>-->
         <!-- ################################################################################################ -->
     </section>
 </div>

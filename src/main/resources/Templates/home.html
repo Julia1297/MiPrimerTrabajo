@@ -28,7 +28,7 @@
         <header id="header" class="hoc clear">
             <!-- ################################################################################################ -->
             <div id="logo" class="fl_left">
-                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
+                <h1><a th:href="${'/'}"><img src="../static/images/logo.jpeg" th:src="@{/images/logo.jpeg}" style="width:80px;height:80px;" /></a></h1>
             </div>
             <div class="fl_right">
                 <div class="navbar">
@@ -95,7 +95,7 @@
                             <h6 class="heading" th:text="${requirement1.name}"></h6>
                             <p th:text="${requirement1.academic} + '[&hellip;]'"> </p>
                         </div>
-                        <img src="../static/images/320x180.png" th:src="@{images/320x180.png}"  alt=""/>
+                        <img src="../static/images/320x180.png" th:src="@{/images/320x180.png}"  alt=""/>
                         <footer><a th:href="${'/showRequirement/' + requirement1.id}">Ver</a></footer>
                     </article>
                 </li>
@@ -106,10 +106,11 @@
                             <h6 class="heading" th:text="${requirement.name}"></h6>
                             <p th:text="${requirement.academic} + '[&hellip;]'"> </p>
                         </div>
-                        <img src="../static/images/320x180.png" th:src="@{images/320x180.png}"  alt=""/>
+                        <img src="../static/images/320x180.png" th:src="@{/images/320x180.png}"  alt=""/>
                         <footer><a th:href="${'/showRequirement/' + requirement.id}">Ver</a></footer>
                     </article>
                 </li>
+
             </ul>
         </div>
         <p class="center"><a class="btn inverse" th:href="${'/searchCategory'}">VER MAS</a></p>

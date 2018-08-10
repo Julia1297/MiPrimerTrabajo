@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 
@@ -64,7 +65,7 @@ public class RequirementsControllers {
         return  "viewSearchByCategory";
     }
     @RequestMapping("/searchByCategory/{category}")
-    String searchByCategory(@PathVariable Integer category, Model model){
+    String searchByCategory(@PathVariable Integer category, Model model) throws UnsupportedEncodingException {
         model.addAttribute("categories",categoryService.listAllCategories());
         model.addAttribute("requirements",requirementsService.getRequirementsByCategory(category));
         model.addAttribute("category",categoryService.getCategory(category));
@@ -91,7 +92,7 @@ public class RequirementsControllers {
         return  "viewRequirements";
     }
     @RequestMapping("/showRequirement/{id}")
-    String searchByDescription(@PathVariable Integer id, Model model){
+    String searchByDescription(@PathVariable Integer id, Model model) {
         model.addAttribute("categories",categoryService.listAllCategories());
         model.addAttribute("requirement", requirementsService.getRequirements(id));
         return  "viewOneRequirement";
