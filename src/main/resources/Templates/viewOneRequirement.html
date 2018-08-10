@@ -47,7 +47,7 @@
                         </button>
                         <div class="dropdown-content"  >
                             <div th:each="category : ${categories}">
-                                <a th:href="${'/searchCategory/' + category.id}" th:text="${category.name}"></a>
+                                <a th:href="${'/searchByCategory/' + category.id}" th:text="${category.name}"></a>
 
                             </div>
                         </div>
@@ -152,6 +152,14 @@
                 </td>
                 <td bgcolor="#ffffcc">
                     <font face="arial, verdana, helvetica"><p><span th:text="${requirement.languages}"></span></p></font>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica">Conocimientos y habilidades:</font>
+                </td>
+                <td bgcolor="#ffffcc">
+                    <font face="arial, verdana, helvetica"><p><span th:text="${requirement.knowledge}"></span></p></font>
                 </td>
             </tr>
         </table>

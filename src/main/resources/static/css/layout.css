@@ -382,8 +382,8 @@ table a, #comments a{background-color:inherit;}
 
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
-	.one_half,.one_third,.two_third, .one_quarter, .two_quarter, .three_quarter{float: left;display:inline-block; float:none; width:180px; margin:0 0 30px 0; padding:0; height:auto;}/*float: left; display:inline-block; float:none; width:auto; margin:0 0 30px 0; padding:0;*/
-
+	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
+	/*{float: left;display:inline-block; float:none; width:180px; margin:0 0 30px 0; padding:0; height:auto;}*//*float: left; display:inline-block; float:none; width:auto; margin:0 0 30px 0; padding:0;*/
 	#topbar{text-align:center;}
 	#topbar ul{margin:0 0 15px 0;}
 	#topbar div:last-child ul{margin:0;}
@@ -396,6 +396,7 @@ table a, #comments a{background-color:inherit;}
 
 	.container{padding-bottom:50px;}/* Not neccessary - just looks better */
 }
+
 
 
 @media screen and (max-width:450px){
@@ -420,3 +421,6 @@ table a, #comments a{background-color:inherit;}
 	#pageintro li article{max-width:none; width:100%;}
 	#pageintro li .heading{font-size:1.6rem;}
 }
+ /*OTHERS*/
+ /*-----------------------------*/
+ .prueba{float: center; display:inline-block; float:none; width:auto; margin:0 0 30px 0; padding:0;}

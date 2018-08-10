@@ -77,6 +77,16 @@
                         <footer><a th:href="${'/showRequirement/' + requirement.id}">Ver</a></footer>
                     </article>
                 </li>
+                <!--
+                <li class="prueba"  th:each="requirement : ${requirements}">
+                    <article >
+                        <div>
+                            <h6 class="heading" th:text="${requirement.name}"></h6>
+                            <p th:text="${requirement.academic} + '[&hellip;]'"> </p>
+                        </div>
+                    </article>
+                </li>
+                -->
             </ul>
         </div>
         <p class="center"><a class="btn inverse" th:href="${'/searchCategory'}">VER MAS</a></p>
